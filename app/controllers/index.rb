@@ -1,7 +1,7 @@
 get '/' do
-  erb :'index'  #EDIT THIS******** this should redirect to whatever is the main page
+  @wishes = Wish.all 
+  erb :'index' 
 end
-
 
 get '/authorization' do
 	erb :'/authorization/authorization'
