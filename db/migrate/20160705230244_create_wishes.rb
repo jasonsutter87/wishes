@@ -1,6 +1,7 @@
 class CreateWishes < ActiveRecord::Migration
   def change
   	create_table :wishes do |t|
+  		t.integer :user_id
   		t.string :title, presence: true
   		t.string :content, presence: true
   		t.integer :price, presence: true
