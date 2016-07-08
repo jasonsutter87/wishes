@@ -1,5 +1,6 @@
 class Wish < ActiveRecord::Base
-	validates :title, uniqueness: true
-	validates :content, uniqueness: true
-	validates :price, uniqueness: true
+	validates :title, presence: true
+	validates :content, presence: true
+	validates :price, presence: true
+	validates :user_id, presence: true
 end
