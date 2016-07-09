@@ -1,3 +1,14 @@
 <div>
   <h3><%= "Hello #{@user.username}!" %></h3>
 </div>
+
+<h5>These are your wishes</h5>
+<% @wishes.each do |wish| %>
+wish id:  <%=  wish.id %><br>
+wish title: <%=  wish.title %><br>
+wish content:<%=  wish.content %><br>
+wish price:<%=  wish.price %><br>
+<br>
+<br>
+<br>
+<% end %>
