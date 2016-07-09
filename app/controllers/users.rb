@@ -24,6 +24,7 @@ end
 
 get "/users/:id" do
   @user = current_user
+  @wishes =  @user.wishes
   erb :"/users/show"
 end
 
