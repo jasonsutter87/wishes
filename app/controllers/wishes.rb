@@ -1,10 +1,10 @@
 #index of all wishes
 get '/wishes' do
-	erb :'wishes/index'
+	erb :'/wishes/index'
 end
 
 # returns a form to create a new wish
-get 'wishes/new' do
+get '/wishes/new' do
 	erb :'wishes/new' 
 end
 
@@ -16,7 +16,7 @@ end
 
 #display a wish by id
 get '/wishes/:id' do
-	p @wish = Wish.find(params[:id])
+	# @wish = Wish.find(params[:id])
 	erb :'wishes/show' 
 end
 
