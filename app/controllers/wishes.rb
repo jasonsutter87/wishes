@@ -11,12 +11,21 @@ end
 
 # Create a new wish
 post '/wishes' do
-	redirect '/' 
+  @wish = Wish.new(user_id: current_user.id, title: params[:wish][:title], content: params[:wish][:content],  price: 1)
+
+  @error = @wish.errors.full_messages
+
+  if @wish.save
+    redirect "/"
+  else
+    @error = "Invalid information, double check your email is correct or that you have not already created an account with this email"
+    erb :"/wishes/new"
+  end
 end
 
 #display a wish by id
 get '/wishes/:id' do
-	# @wish = Wish.find(params[:id])
+	@wish = Wish.find(params[:id])
 	erb :'wishes/show' 
 end
 
