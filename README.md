@@ -31,5 +31,6 @@
 - better style(background, theme, colors)
 - maybe geography base locations of where the wish was from.
 - add time stamps to posts. (created and modified)
-- if the user has no money they can not buy anymore wishes. 
+- if the user has no money they can not buy anymore wishes.
+- add a polymorphic assocation for wishes so they can be private and public
 
