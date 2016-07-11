@@ -12,6 +12,7 @@ wish price:<%=  wish.price %><br>
 
 
 <a href="/wishes/<%=  wish.id %>/edit" class="btn btn-success btn-sm" value="Edit" name="Edit">Edit</a>
+
 <form action="/wishes/<%=  wish.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit"  class="btn btn-danger btn-sm" value="Delete Wish">
