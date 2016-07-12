@@ -6,7 +6,9 @@
 	  <div class="row">
 	    <div class="col-sm-4">
 	    	<% @wishes.each do |wish| %>
-	    		<a href="/wishes/<%= wish.id%>"><%= wish.title%></a>
+	    		<% if wish.private == false %>
+	    			<a href="/wishes/<%= wish.id%>"><%= wish.title%></a>
+	    		<% end %>
 	    	<% end %>
 	    </div>
 	  </div>
