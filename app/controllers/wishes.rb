@@ -18,7 +18,11 @@ end
 
 # Create a new wish
 post '/wishes' do
-  @wish = Wish.new(user_id: current_user.id, title: params[:wish][:title], content: params[:wish][:content],  price: 1)
+  if params["wish"]["private"] == nil
+    @wish = Wish.new(user_id: current_user.id, title: params[:wish][:title], content: params[:wish][:content], :private => false, price: 1)
+  else
+    @wish = Wish.new(user_id: current_user.id, title: params[:wish][:title], content: params[:wish][:content], :private => true, price: 1)
+  end
 
   @error = @wish.errors.full_messages
 
