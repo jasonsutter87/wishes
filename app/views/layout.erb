@@ -50,8 +50,12 @@
         <% if !current_user %>
           <li><a href="/users/new"><span class="fa fa-user-plus"></span> Sign Up</a></li>
           <li><a href="/authorization"><span class="fa fa-sign-in"></span> Login</a></li>
-        <% else %>
+        <% elsif current_user.wallet == nil%>
         <li><a href="/users/<%= current_user.id %>/money"><span class="fa fa-plus"></span> Add Money</a></li>
+        <li><a href="/wishes/new"><span class="fa fa-cloud"></span> New Wish</a></li>
+         <li><a href="/users/<%= current_user.id %>"><span class="fa fa-user"></span> Profile</a></li>
+         <li><a href="/signout"><span class="fa fa-sign-out"></span> Log Out</a></li>
+        <% elsif current_user.wallet != nil%>
         <li><a href="/wishes/new"><span class="fa fa-cloud"></span> New Wish</a></li>
          <li><a href="/users/<%= current_user.id %>"><span class="fa fa-user"></span> Profile</a></li>
          <li><a href="/signout"><span class="fa fa-sign-out"></span> Log Out</a></li>
