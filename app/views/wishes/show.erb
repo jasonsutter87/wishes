@@ -6,7 +6,7 @@
 <p>Wish content is:</p><%= @wish.content %><br>
 <p>Wish price is:</p><%= @wish.price %><br><br>
 
-<% if current_user.id != @wish.user_id && current_user.wallet != nil %>
+<% if current_user.id != @wish.user_id && current_user.wallet != 0 %>
 	<form action="/wishes/<%=  @wish.id %>/buy" method="post">
 		<input id="hidden" type="hidden" name="_method" value="put">
 		<button type="submit" class="btn btn-success">Buy</button>
