@@ -5,6 +5,8 @@ class CreateWishes < ActiveRecord::Migration
   		t.string :title, presence: true
   		t.string :content, presence: true
   		t.integer :price, presence: true
+  		t.boolean :private, default: false
+  		t.integer :new_user, default: 0
   		t.timestamps null: false
   	end
   end
