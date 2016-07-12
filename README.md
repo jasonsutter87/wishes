@@ -29,9 +29,9 @@
 - a user can add value to thier wallet
 - a user can see thier wallet in their profile
 - add value button disappears once user has money
+- when a user buys a wish their wallet goes down and the other users wallet goes up
 
 ### what needs to get done
-- when a user buys a wish their wallet goes down and the other users wallet goes up
 - better style(background, theme, colors)
 - cat api for wish photos
 - ajax delete wishes
