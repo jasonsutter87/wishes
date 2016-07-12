@@ -21,6 +21,17 @@ post "/users" do
   end
 end
 
+get "/users/:id/money" do
+  @user = current_user
+  erb :"/users/money"
+end
+
+put '/users/:id/money' do
+  @user = User.find(params[:id])
+  @user.update(params['wish'])
+  redirect '/'  
+end
+
 
 get "/users/:id" do
   @user = current_user
