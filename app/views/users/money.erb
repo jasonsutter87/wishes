@@ -1,0 +1,23 @@
+<div class="container">
+	<h1>Add money to your wallet!</h1>
+</div>
+
+<div class="container">
+	<div class="col-sm-10">
+		<% if @error %>
+		<%= @error %>
+		<% end %>
+		<form action="/users/<%=  @user.id %>/money" method="post">
+			<input id="hidden" type="hidden" name="_method" value="put">
+
+			<fieldset class="form-group">
+				<label for="value">Add Value</label>
+				<input type="text" class="form-control" id="value"  name="wish[wallet]"placeholder="Add Value Here">
+			</fieldset>
+
+			<input class="btn btn-success btn-sm" name="Add Value" type="submit" value="Done">
+			<a href="/" class="btn btn-danger btn-sm" value="Cancel" name="Cancel">Cancel</a>
+		</form>
+	</div>
+</div><br><br><br><br>
+
