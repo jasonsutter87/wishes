@@ -21,6 +21,10 @@ post "/users" do
   end
 end
 
+get "/users/:id/money" do
+  @user = current_user
+  erb :"/users/money"
+end
 
 get "/users/:id" do
   @user = current_user

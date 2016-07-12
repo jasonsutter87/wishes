@@ -43,7 +43,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Wishes</a>
+      <a class="navbar-brand" href="/"><span class="fa fa-cloud"></span> Wishes</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -51,8 +51,8 @@
           <li><a href="/users/new"><span class="fa fa-user-plus"></span> Sign Up</a></li>
           <li><a href="/authorization"><span class="fa fa-sign-in"></span> Login</a></li>
         <% else %>
-
-        <li><a href="/wishes/new"><span class="fa fa-plus"></span> New Wish</a></li>
+        <li><a href="/users/<%= current_user.id %>/money"><span class="fa fa-plus"></span> Add Money</a></li>
+        <li><a href="/wishes/new"><span class="fa fa-cloud"></span> New Wish</a></li>
          <li><a href="/users/<%= current_user.id %>"><span class="fa fa-user"></span> Profile</a></li>
          <li><a href="/signout"><span class="fa fa-sign-out"></span> Log Out</a></li>
         <% end %>
