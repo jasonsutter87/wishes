@@ -24,13 +24,13 @@
 - a signed in user can delete their own wishes
 - fast bootstrapping for navbar
 - fast bootstapping for layout
-
+- user can have private wishes 
+- if the user has no money they can not buy anymore wishes.
 
 ### what needs to be done
 - when a user buys a wish their wallet goes down and the other users wallet goes up
 - better style(background, theme, colors)
 - maybe geography base locations of where the wish was from.
 - add time stamps to posts. (created and modified)
-- if the user has no money they can not buy anymore wishes.
-- add a polymorphic assocation for wishes so they can be private and public
+
 
