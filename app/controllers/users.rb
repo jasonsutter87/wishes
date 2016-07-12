@@ -26,6 +26,13 @@ get "/users/:id/money" do
   erb :"/users/money"
 end
 
+put '/users/:id/money' do
+  @user = User.find(params[:id])
+  @user.update(params['wish'])
+  redirect '/'  
+end
+
+
 get "/users/:id" do
   @user = current_user
   @wishes =  @user.wishes

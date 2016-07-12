@@ -7,7 +7,7 @@
 		<% if @error %>
 		<%= @error %>
 		<% end %>
-		<form action="#" method="post">
+		<form action="/users/<%=  @user.id %>/money" method="post">
 			<input id="hidden" type="hidden" name="_method" value="put">
 
 			<fieldset class="form-group">
