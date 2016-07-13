@@ -11,17 +11,19 @@
 
 			<fieldset class="form-group">
 				<label for="title">Title</label>
-				<input type="text" class="form-control" id="title"  name="wish[title]"placeholder="Place an amazing title here">
+				<input type="text" class="form-control" id="title"  name="wish[title]",  placeholder="Place an amazing title here", value="<%= @wish.try(:title) %>">
 			</fieldset>
 
 			<fieldset class="form-group">
 				<label for="content">Content <em style="color: #808080;">140 Characters or less</em></label>
-				<textarea style="resize:none;" class="form-control" rows="3" id="content" name="wish[content]" placeholder="Cool awesome wish goes here" maxlength="140"></textarea>
+
+				
+				<textarea style="resize:none;"  id="content" class="form-control" rows="3" id="content" name="wish[content]" placeholder="Cool awesome wish goes here" maxlength="140",value="<%= @wish.try(:content) %>"></textarea>
 			</fieldset>
 
 			<fieldset class="form-group">
 				<div class="checkbox">
-					<label><input type="checkbox" value="true" name="wish[private]"> Private?</label>
+					<label><input type="checkbox" value="true" name="wish[private]", value="<%= @wish.try(:private) %>"> Private?</label>
 				</div>
 			</fieldset>
 			<input class="btn btn-success btn-sm" name="Keep Edits" type="submit" value="Done">
