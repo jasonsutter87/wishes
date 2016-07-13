@@ -5,3 +5,4 @@ end
 40.times do
 	Wish.create(user_id: rand(1..10), title: Faker::Lorem.word, content: Faker::Lorem.paragraph, price: 1)
 end
+
