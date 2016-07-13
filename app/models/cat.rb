@@ -3,7 +3,9 @@ class Cat
  	include HTTParty
 	base_uri "http://thecatapi.com/api/images/get"
 
-	def size
-		@cat = self.class.get("?size=med")
+	def format
+		@cat = self.class.get("?size=med&format=xml")
 	end
+
+
 end

@@ -3,8 +3,6 @@ get '/' do
   erb :'index' 
 end
 
-
-
 get '/cats' do
 	@cat = Cat.new
 	erb :'cat'
