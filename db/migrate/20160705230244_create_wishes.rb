@@ -7,6 +7,7 @@ class CreateWishes < ActiveRecord::Migration
   		t.integer :price, presence: true
   		t.boolean :private, default: false
   		t.integer :new_user, default: 0
+      t.string :url
   		t.timestamps null: false
   	end
   end
