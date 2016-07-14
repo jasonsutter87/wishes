@@ -36,7 +36,7 @@
 </head>
 <body>
   <nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <div class="container topnav">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -60,7 +60,7 @@
          <li><a href="/sessions/delete"><span class="fa fa-sign-out"></span> Log Out</a></li>
         <% elsif current_user.wallet != nil%>
         <li><a href="/wishes/new"><span class="fa fa-cloud"></span> New Wish</a></li>
-         <li><a href="/users/<%= current_user.id %>"><span class="fa fa-user"></span> Profile</a></li>
+         <li><a href="/users/<%= current_user.id %>"><span class=" fa fa-user"></span> Profile</a></li>
          <li><a href="/sessions/delete"><span class="fa fa-sign-out"></span> Log Out</a></li>
         <% end %>
       </ul>
