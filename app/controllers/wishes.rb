@@ -25,9 +25,10 @@ end
 # Create a new wish
 post '/wishes' do
   if params["wish"]["private"] == nil
-    @wish = Wish.new(user_id: current_user.id, title: params[:wish][:title], content: params[:wish][:content], :private => false, price: 1)
+    @cat = Cat.new
+    @wish = Wish.new(user_id: current_user.id, title: params[:wish][:title], content: params[:wish][:content], :private => false, price: 1 , url: "#{@cat.format["response"]["data"]["images"]["image"]["url"]}")
   else
-    @wish = Wish.new(user_id: current_user.id, title: params[:wish][:title], content: params[:wish][:content], :private => true, price: 1)
+    @wish = Wish.new(user_id: current_user.id, title: params[:wish][:title], content: params[:wish][:content], :private => true, price: 1, url: "#{@cat.format["response"]["data"]["images"]["image"]["url"]}")
   end
 
   @error = @wish.errors.full_messages
@@ -35,7 +36,7 @@ post '/wishes' do
   if @wish.save
     redirect "/"
   else
-    @error = "Invalid information, double check your email is correct or that you have not already created an account with this email"
+    @error = "Invalid information"
     erb :"/wishes/new"
   end
 end
