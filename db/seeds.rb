@@ -3,6 +3,10 @@
 end
 
 40.times do
-	Wish.create(user_id: rand(1..10), title: Faker::Lorem.word, content: Faker::Lorem.paragraph, price: 1)
+	Wish.create(	user_id: rand(1..10),
+								title: Faker::Lorem.word,
+								content: Faker::Lorem.paragraph,
+								price: 1,
+								url: "https://robohash.org/#{rand(0..9)}#{rand(0..9)}#{rand(0..9)}.#{rand(0..9)}#{rand(0..9)}#{rand(0..9)}.#{rand(0..9)}#{rand(0..9)}.#{rand(0..9)}#{rand(0..9)}#{rand(0..9)}.png" )
 end
 

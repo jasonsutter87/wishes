@@ -48,9 +48,12 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user %>
+          <li><a href="/cats"><span class="fa fa-github-alt"></span> Random Cats</a></li>
           <li><a href="/users/new"><span class="fa fa-user-plus"></span> Sign Up</a></li>
           <li><a href="/sessions/new"><span class="fa fa-sign-in"></span> Login</a></li>
         <% elsif current_user.wallet == 0 %>
+         <li><a href="/cats"><span class="fa fa-github-alt"></span> Random Cats</a></li>
+
         <li><a href="/users/<%= current_user.id %>/money"><span class="fa fa-plus"></span> Add Money</a></li>
         <li><a href="/wishes/new"><span class="fa fa-cloud"></span> New Wish</a></li>
          <li><a href="/users/<%= current_user.id %>"><span class="fa fa-user"></span> Profile</a></li>

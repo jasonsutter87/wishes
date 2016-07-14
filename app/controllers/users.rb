@@ -14,7 +14,7 @@ post "/users" do
   @error = @user.errors.full_messages
 
   if @user.save
-    redirect "/authorization"
+    redirect "/sessions/new"
   else
     @error = "Invalid information, double check your email is correct or that you have not already created an account with this email"
     erb :"/users/new"
