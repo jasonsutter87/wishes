@@ -86,7 +86,7 @@
                 </h4>
                 <h5 class="center">Wish made by: <%= User.find(wish.user_id).username %></h5>
                 <p>&nbsp;&nbsp;&nbsp;<%= wish.content[0..50]%> ...</p>
-                <p>Buy to find out more!</p>
+                <strong>Buy to find out more!</strong>
                 <% if current_user.id != wish.user_id && current_user.wallet != 0 %>
                 <form action="/wishes/<%= wish.id %>/buy" method="post">
                     <input id="hidden" type="hidden" name="_method" value="put">
