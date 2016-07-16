@@ -22,7 +22,7 @@
 
                 <h5 class="center">Wish made by: <%= User.find(wish.user_id).username %></h5>
              
-                <p>&nbsp;&nbsp;&nbsp;<%= wish.content%> ...</p>
+                <p>&nbsp;&nbsp;&nbsp;<%= wish.content%></p>
                 <br>
                <form action="/wishes/<%=  wish.id %>" method="post" style="position: absolute; bottom: 10%";>
   <input type="hidden" name="_method" value="delete">
