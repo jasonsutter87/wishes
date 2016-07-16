@@ -13,7 +13,7 @@
 - a signed in user can delete their own wishes
 
 
-### What is done
+### What has been done
 - a user can sign in
 - a user can sign out
 - a user and sign up
@@ -26,10 +26,16 @@
 - fast bootstapping for layout
 - user can have private wishes 
 - if the user has no money they can not buy anymore wishes.
-
-### what needs to be done
+- a user can add value to thier wallet
+- a user can see thier wallet in their profile
+- add value button disappears once user has money
 - when a user buys a wish their wallet goes down and the other users wallet goes up
 - better style(background, theme, colors)
+- cat api for wish photos
+
+### what needs to get done
+- ajax delete wishes
+- ajax user log in so the index goes grey, and facebook log in pops up
 - maybe geography base locations of where the wish was from.
 - add time stamps to posts. (created and modified)
 

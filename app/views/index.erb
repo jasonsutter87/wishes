@@ -1,110 +1,123 @@
 <% if !current_user %>
-    <div class="intro-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-                        <h1>Wishes</h1>
-                        <h3>A Place to Sell Wishes</h3>
-                        
-                        <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <a href="/sessions/new" class="btn btn-default btn-lg"><i class=""></i> <span class="network-name">Sign In</span></a>
-                            </li>
-                            <li>
-                                <a href="/users/new" class="btn btn-default btn-lg"><i class=""></i> <span class="network-name">Sign Up</span></a>
-                            </li>
-                        </ul>
-                    </div>
+<div class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+                    <h1>Wishes</h1>
+                    <h3>A Place to Sell Wishes</h3>
+
+                    <ul class="list-inline intro-social-buttons">
+                        <li>
+                            <a href="/sessions/new" class="btn btn-default btn-lg"><i class=""></i> <span class="network-name">Sign In</span></a>
+                        </li>
+                        <li>
+                            <a href="/users/new" class="btn btn-default btn-lg"><i class=""></i> <span class="network-name">Sign Up</span></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
 
-      </div>
+</div>
 
-	<a  name="services"></a>
-    	<div class="content-section-a">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Dear Wishesh.com<br>Special Thanks</h2>
-                    <p class="lead">A special thanks to <a href="/">Wishes.com</a> for providing a place to exhange my amazing wishes.</p>
-                </div>       
-            </div>
+<a  name="services"></a>
+<div class="content-section-a">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Dear Wishesh.com<br>Special Thanks</h2>
+                <p class="lead">A special thanks to <a href="/">Wishes.com</a> for providing a place to exhange my amazing wishes.</p>
+            </div>       
         </div>
+    </div>
     </div
     <div class="content-section-b">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    
+
                     <div class="clearfix"></div>
                     <h2 class="section-heading">The Next Big Thing!</h2>
                     <p class="lead">Turn your wishes into money!!!</p>
                 </div>
-              
+
             </div>
 
         </div>
-  
 
- 
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="https://github.com/jasonsutter87/wishes"><span class="fa fa-github-square"> Fork Me!</span></a>
-                        </li>
-           
-                    </ul>
-   
+
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://github.com/jasonsutter87/wishes"><span class="fa fa-github-square"> Fork Me!</span></a>
+                            </li>
+
+                        </ul>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-   
+        </footer>
 
 
-<% else %>
-	<div class="container">
-	  <div class="row">
-	    	<% @wishes.each do |wish| %>
-	    		<% if wish.private == false %>
-	    				<div class="col-sm-3 col-lg-3 col-md-3" ">
-                        <div class="thumbnail">
-                            <div class="caption" style="height: 200px";>
-                                <h4 class="pull-right">$<%= wish.price %></h4>
-                                <h4 class="center"><a href="/wishes/<%= wish.id%>"><%= wish.title%></a>
-                                </h4>
-                                <p><%= wish.content%></p>
-                            </div>
-                            <br>
-                        </div>
-	    			</div>
-	    			
-	    		<% end %>
-	    	<% end %>
-	    		</div>
-	    </div>
-	  </div>
-	</div>
-	 <footer class="footer">
+
+        <% else %>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="https://github.com/jasonsutter87/wishes"><span class="fa fa-github-square"> Fork Me!</span></a>
-                        </li>
-           
-                    </ul>
-   
-                </div>
+         <div class="row">
+          <% @wishes.each do |wish| %>
+          <% if wish.private == false %>
+          <div class="col-sm-3 col-lg-3 col-md-3" ">
+            <div class="thumbnail">
+                <div class="caption" style="height: 250px";>
+                    <h4 class="pull-left">
+                     <img src="<%= wish.url %>" style="height: 35px; width: 35px";>
+                 </h4>
+                 <h4 class="pull-right">$<%= wish.price %></h4>
+                 <h4 class="center">
+                    <%= wish.title%>
+                </h4>
+
+                <h5 class="center">Wish made by: <%= User.find(wish.user_id).username %></h5>
+                <p>&nbsp;&nbsp;&nbsp;<%= wish.content[0..50]%> ...</p>
+                <p>Buy to find out more!</p>
+                <% if current_user.id != wish.user_id && current_user.wallet != 0 %>
+                <form action="/wishes/<%= wish.id %>/buy" method="post">
+                    <input id="hidden" type="hidden" name="_method" value="put">
+                    <button type="submit" class="btn btn-success">Buy</button>
+                </form>
+                <% end %>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <% end %>
+    <% end %>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://github.com/jasonsutter87/wishes"><span class="fa fa-github-square"> Fork Me!</span></a>
+                    </li>
+
+                </ul>
+
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 <% end %>
