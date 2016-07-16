@@ -13,11 +13,12 @@
 				<label for="title">Title</label>
 				<input type="text" class="form-control" id="title"  name="wish[title]",  placeholder="Place an amazing title here", value="<%= @wish.try(:title) %>">
 			</fieldset>
-
+				<br>
+				<p>Old Contents:</p>
+				<p><%= @wish.content %></p>
+				<br>
 			<fieldset class="form-group">
-				<label for="content">Content <em style="color: #808080;">140 Characters or less</em></label>
-
-				
+				<label for="content">New content <em style="color: #808080;">140 Characters or less</em></label>
 				<textarea style="resize:none;"  id="content" class="form-control" rows="3" id="content" name="wish[content]" placeholder="Cool awesome wish goes here" maxlength="140",value="<%= @wish.try(:content) %>"></textarea>
 			</fieldset>
 
