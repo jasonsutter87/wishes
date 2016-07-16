@@ -76,11 +76,19 @@
 	    		<% if wish.private == false %>
 	    				<div class="col-sm-3 col-lg-3 col-md-3" ">
                         <div class="thumbnail">
-                            <div class="caption" style="height: 200px";>
-                                <h4 class="pull-right">$<%= wish.price %></h4>
-                                <h4 class="center"><a href="/wishes/<%= wish.id%>"><%= wish.title%></a>
+                            <div class="caption" style="height: 250px";>
+                                <h4 class="pull-left">
+                                   <img src="<%= wish.url %>" style="height: 35px; width: 35px";>
                                 </h4>
-                                <p><%= wish.content%></p>
+                                <h4 class="pull-right">$<%= wish.price %></h4>
+                                <h4 class="center"><a href="/wishes/<%= wish.id%>">
+                                    <%= wish.title%></a>
+                                </h4>
+
+                                <h5 class="center">Wish made by: <%= User.find(wish.user_id).username %></h5>
+                                <p>&nbsp;&nbsp;&nbsp;<%= wish.content[0..50]%> ...</p>
+                                <p>Buy to find out more!</p>
+                                <button type="submit" class="btn btn-success">Buy</button>
                             </div>
                             <br>
                         </div>
