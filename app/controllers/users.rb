@@ -14,10 +14,10 @@ post "/users" do
   @error = @user.errors.full_messages
 
   if @user.save
-    redirect "/sessions/new"
+    redirect "/"
   else
     @error = "Invalid information, double check your email is correct or that you have not already created an account with this email"
-    erb :"/users/new"
+    redirect "/"
   end
 end
 
