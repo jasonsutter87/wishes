@@ -11,12 +11,12 @@ end
 post "/users" do
   @user = User.new(params[:user])
 
-  @error = @user.errors.full_messages
+  # flash[:error] = @user.errors.full_messages
 
   if @user.save
     redirect "/"
   else
-    @error = "Invalid information, double check your email is correct or that you have not already created an account with this email"
+    flash[:error] = "Invalid information, double check your email is correct or that you have not already created an account with this email"
     redirect "/"
   end
 end

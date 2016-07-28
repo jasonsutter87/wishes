@@ -3,8 +3,8 @@
 </div>
 <div class="container">
   <div class="col-sm-10">
-  <% if @error %>
-    <%= @error %>
+  <% if flash[:error] %>
+    <%= flash[:error] %>
   <% end %>
   <form action='/users' method='POST'>
    <fieldset class="form-group">

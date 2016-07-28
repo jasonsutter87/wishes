@@ -32,12 +32,11 @@ post '/wishes' do
     @wish = Wish.new(user_id: current_user.id, title: params[:wish][:title], content: params[:wish][:content], :private => true, price: 1, url: "#{@cat.format["response"]["data"]["images"]["image"]["url"]}")
   end
 
-  @error = @wish.errors.full_messages
 
   if @wish.save
     redirect "/"
   else
-    @error = "Invalid information"
+    flash[:error] = "Invalid information"
     erb :"/wishes/new"
   end
 end

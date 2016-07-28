@@ -15,7 +15,7 @@ gem 'kronic'
 gem 'shotgun'
 gem 'bcrypt'
 gem 'httparty'
-
+gem 'sinatra-flash'
 gem 'faker'
 
 group :test do

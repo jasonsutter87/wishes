@@ -5,5 +5,9 @@ end
 
 get '/cats' do
 	@cat = Cat.new
-	erb :'cat'
+	if request.xhr?
+		erb :'_show', layout: false
+	else
+		erb :'cat'
+	end	
 end
