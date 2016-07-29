@@ -4,8 +4,8 @@
 
 <div class="container">
 	<div class="col-sm-10">
-		<% if @error %>
-		<%= @error %>
+		<% if flash[:error] %>
+		<%= flash[:error] %>
 		<% end %>
 		<form action="/users/<%=  @user.id %>/money" method="post">
 			<input id="hidden" type="hidden" name="_method" value="put">

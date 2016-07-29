@@ -6,6 +6,4 @@ class Cat
 	def format
 		@cat = self.class.get("?size=med&format=xml")
 	end
-
-
 end

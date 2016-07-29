@@ -70,3 +70,11 @@
 	font-size: 18px;
 	text-align: center;
 }
+
+.modal-title{
+    color: black;
+}
+
+.modal-body{
+    color: black;
+}

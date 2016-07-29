@@ -1,54 +1,17 @@
 $(document).ready(function() {
-
-	
+	$('#cat-image-button').on('click', newCatImg)
 });
 
-
-//Javascript + Jquery +Ajax example from todo list
-
-
-// $(document).ready(function() {
-//   $('body').on('submit', "#deleteButton" ,function(event){
-//     event.preventDefault();
-//      var killTask = $(this).attr('action'); // '/tasks/11'
-//      var killDiv = $(this).parent();
-
-//     $.ajax({
-//     method: "DELETE",
-//     url: killTask
-//     }).done(function(){
-//     killDiv.remove();
-// })
-// })
-//   $('#new-task').on('click', function(event){
-//     event.preventDefault();
-
-//       $.ajax({
-//         type: "get",
-//         url: "/tasks/new"
-//       }).done(function(response){
-//         $("#new-task").hide();
-//         $(".container").append(response);
-//       });
-//   });
-
-//   $('.container').on('submit','#new-task-form', function(event){
-//     event.preventDefault();
-//     var data =  $( this ).serialize();
-//      $.ajax({
-//         type: "post",
-//         url: "/tasks",
-//         data: data
-//       }).done(function(response){
-//         console.log(response);
-
-//         $(".container ul").append(response);
-//         $("#new-task-form").hide();
-//         $("#new-task").show();
-//         $('#new-task-form').remove();
-//       });
-//   })
-
-// });
-
-// Status API Training Shop Blog About
+function newCatImg(event){
+	event.preventDefault()
+	var url = $(this).attr('href')
+	$.ajax({
+		url: url,
+		method: "GET"
+	})
+	.done(function(response){
+		console.log(response)
+		$('#the-cat-image').empty()
+		$('#the-cat-image').append(response)
+	})
+}
