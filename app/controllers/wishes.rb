@@ -17,14 +17,7 @@ end
 
 # Create a new wish
 post '/wishes' do
-  if params["wish"]["private"] == nil
-    @cat = Cat.new
-    @wish = Wish.new(user_id: current_user.id, title: params[:wish][:title], content: params[:wish][:content], :private => false, price: 1 , url: "#{@cat.format["response"]["data"]["images"]["image"]["url"]}")
-  else
-    @wish = Wish.new(user_id: current_user.id, title: params[:wish][:title], content: params[:wish][:content], :private => true, price: 1, url: "#{@cat.format["response"]["data"]["images"]["image"]["url"]}")
-  end
-
-
+  private?
   if @wish.save
     redirect "/"
   else
