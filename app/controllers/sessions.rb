@@ -9,7 +9,7 @@ post "/sessions" do
     session[:user_id] = @user.id
     redirect "/"
   else
-    @error = "Sorry, try a new password or email!"
+    flash[:error] = "Sorry, try a new password or email!"
     redirect "/sessions/new"
   end
 end

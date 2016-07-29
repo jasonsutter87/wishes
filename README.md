@@ -32,15 +32,11 @@
 - when a user buys a wish their wallet goes down and the other users wallet goes up
 - better style(background, theme, colors)
 - cat api for wish photos
+- ajax cat photos
 - wishes increment in price after being bought
 - users profile pages is styled
 - users can only see the first 30 characters in a post before buying
 - edit wish shows old content
 
-### what needs to get done
-- ajax delete wishes
-- ajax user log in so the index goes grey, and facebook log in pops up
-- maybe geography base locations of where the wish was from.
-- add time stamps to posts. (created and modified)
 
 

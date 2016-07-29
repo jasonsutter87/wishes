@@ -3,8 +3,8 @@
 </div>
 <div class="container">
 	<div class="col-sm-10">
-		<% if @error %>
-		<%= @error %>
+		<% if flash[:error] %>
+		<%= flash[:error] %>
 		<% end %>
 		<form action="/wishes/<%=  @wish.id %>" method="post">
 			<input id="hidden" type="hidden" name="_method" value="put">
@@ -13,13 +13,10 @@
 				<label for="title">Title</label>
 				<input type="text" class="form-control" id="title"  name="wish[title]",  placeholder="Place an amazing title here", value="<%= @wish.try(:title) %>">
 			</fieldset>
-				<br>
-				<p>Old Contents:</p>
-				<p><%= @wish.content %></p>
-				<br>
+				
 			<fieldset class="form-group">
 				<label for="content">New content <em style="color: #808080;">140 Characters or less</em></label>
-				<textarea style="resize:none;"  id="content" class="form-control" rows="3" id="content" name="wish[content]" placeholder="Cool awesome wish goes here" maxlength="140",value="<%= @wish.try(:content) %>"></textarea>
+				<textarea style="resize:none;"  id="content" class="form-control" rows="3" id="content" name="wish[content]"maxlength="140"><%= @wish.content %></textarea>
 			</fieldset>
 
 			<fieldset class="form-group">
