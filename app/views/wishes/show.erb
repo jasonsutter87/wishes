@@ -1,10 +1,9 @@
+<div id="show-wish" class="center">
 <h1><%= @wish.title %></h1>
-<p>Wish photo is:</p><img src="<%= @wish.url %>"><br>
-<p>Wish id is:</p><%= @wish.id %><br>
-<p>Wish owner is:</p><%= @wish.user_id %><br><br>
-<p>Wish title is:</p><%= @wish.title %><br>
-<p>Wish content is:</p><%= @wish.content %><br>
-<p>Wish price is:</p><%= @wish.price %><br><br>
+<img src="<%= @wish.url %>"><br><br>
+<h3>Wish content</h3> 
+<p><%= @wish.content %></p><br>
+<h3>Wish price:</h3><%= @wish.price %><br><br>
 
 <% if current_user.id != @wish.user_id && current_user.wallet != 0 %>
 	<form action="/wishes/<%=  @wish.id %>/buy" method="post">
@@ -13,3 +12,4 @@
 	</form>
 <% end %>
 
+</div>
