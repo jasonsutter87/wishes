@@ -33,7 +33,10 @@
 - better style(background, theme, colors)
 - cat api for wish photos
 - ajax cat photos
-
+- wishes increment in price after being bought
+- users profile pages is styled
+- users can only see the first 30 characters in a post before buying
+- edit wish shows old content
 
 
 
